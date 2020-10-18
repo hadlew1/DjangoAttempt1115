@@ -1,0 +1,62 @@
+﻿<!doctype html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+        <title>Contacts</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+
+    </head>
+
+    <body>
+
+{% block page_content %}{% endblock %}
+
+    </body>
+
+</html>
+ 
+
+Then, we define how the “car_detail.html” template will look:
+
+(myprojectenv) [root@pga cars]# cat templates/car_detail.html 
+
+{% extends "base.html" %}
+
+{% block page_content %}
+
+        <div class="mw6 center pa3 sans-serif">
+
+            <h1 class="mb4">Driver: {{ drivers.name | linebreaks }}</h1>
+
+            <header class="b mb2">License: {{ drivers.license }}</header>
+
+        {% for v in vehicles %}
+
+            <div class="pa2 mb3 striped--near-white">
+
+                <div class="pl2">
+
+                    <p class="mb2">Make/Model: {{ v.make }} {{ v.model }}</p>
+
+                    <p class="mb2">Year: {{ v.year }}</p>
+
+                    <p class="mb2">Vin: {{ v.vin }}</p>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+        </div>
+
+{% endblock %}

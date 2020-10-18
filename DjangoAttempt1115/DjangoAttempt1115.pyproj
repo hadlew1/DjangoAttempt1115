@@ -3,7 +3,8 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>DjangoAttempt1115</Name>
     <RootNamespace>DjangoAttempt1115</RootNamespace>
-    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env2|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -35,6 +36,9 @@
     <Compile Include="app\migrations\__init__.py" />
     <Compile Include="app\models.py" />
     <Compile Include="app\tests.py" />
+    <Compile Include="app\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="manage.py" />
@@ -44,7 +48,13 @@
     <Compile Include="DjangoAttempt1115\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\templates\app\index.html" />
+    <Content Include="app\base.html" />
+    <Content Include="app\car_detail.html" />
+    <Content Include="app\templates\app\car_detail.html" />
+    <Content Include="app\templates\index.html" />
+    <Content Include="app\templates\app\base.html" />
+    <Content Include="app\templates\base.html" />
+    <Content Include="app\templates\car_detail.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +65,24 @@
     <Folder Include="DjangoAttempt1115\" />
   </ItemGroup>
   <ItemGroup>
+    <Interpreter Include="env1\">
+      <Id>env1</Id>
+      <Version>0.0</Version>
+      <Description>env1 (Python 3.9 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+    <Interpreter Include="env2\">
+      <Id>env2</Id>
+      <Version>3.7</Version>
+      <Description>env2 (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
     <Interpreter Include="env\">
       <Id>env</Id>
       <Version>3.8</Version>
